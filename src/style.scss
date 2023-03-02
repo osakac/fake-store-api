@@ -39,19 +39,45 @@ a {
   margin-right: 200px;
   }
 
-  ul {
+  .navbar__list {
     display: flex;
     list-style: none;
     font-size: 20px;
     font-weight: bold;
 
-    li:hover {
+    .navbar__item:hover {
       color: $orangeColor;
+      cursor: pointer;
     }
     
-    li:not(:last-child) {
+    .navbar__item:not(:last-child) {
       margin-right: 50px;
     }
+  }
+}
+
+.dropdown__trigger {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  left: -10%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: #ccc;
+
+  .dropdown__item {
+    text-align: center;
+    color: white;
+    border-bottom: 1px solid $orangeColor;
+  }
+
+  .dropdown__item:hover {
+    color: $orangeColor;
   }
 }
 

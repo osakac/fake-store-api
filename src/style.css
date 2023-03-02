@@ -35,17 +35,41 @@ a {
 .navbar h2 {
   margin-right: 200px;
 }
-.navbar ul {
+.navbar .navbar__list {
   display: flex;
   list-style: none;
   font-size: 20px;
   font-weight: bold;
 }
-.navbar ul li:hover {
+.navbar .navbar__list .navbar__item:hover {
   color: #F7AA35;
+  cursor: pointer;
 }
-.navbar ul li:not(:last-child) {
+.navbar .navbar__list .navbar__item:not(:last-child) {
   margin-right: 50px;
+}
+
+.dropdown__trigger {
+  position: relative;
+}
+
+.dropdown__menu {
+  position: absolute;
+  left: -10%;
+  display: flex;
+  flex-direction: column;
+  list-style-type: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  background: #ccc;
+}
+.dropdown__menu .dropdown__item {
+  text-align: center;
+  color: white;
+  border-bottom: 1px solid #F7AA35;
+}
+.dropdown__menu .dropdown__item:hover {
+  color: #F7AA35;
 }
 
 .wrapper {
