@@ -14,22 +14,17 @@ import { useRoute, useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 
 export default {
+  props: ['products'],
   setup() {
     const store = useStore()
     const router = useRouter()
-
-    const products = computed(() => store.getters.getProducts)
 
     async function openProduct(id) {
       await store.dispatch('loadProduct', id)
       router.push(`/product/${id}`)
     }
 
-    onMounted(async () => {
-      await store.dispatch('loadProducts')
-    })
-
-    return { products, openProduct }
+    return { openProduct }
   },
   name: 'ProductsList'
 }

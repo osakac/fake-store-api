@@ -6,7 +6,7 @@
       <li @mouseover="showDropdown" @mouseleave="hideDropdown" class="dropdown__trigger navbar__item">Категории
         <div v-if="visibleDropdown" class="dropdown">
           <ul class="dropdown__menu">
-            <li v-for="item in categories" :key="item" class="dropdown__item">{{ item }}</li>
+            <li v-for="item in categories" :key="item" @click="openCategory(item)" class="dropdown__item">{{ item }}</li>
           </ul>
         </div>
       </li>
@@ -16,14 +16,20 @@
 
 <script>
 import { ref, onMounted, computed } from 'vue';
+import { useRouter } from 'vue-router';
 import { useStore } from 'vuex';
 
 export default {
   setup() {
     const store = useStore()
+    const router = useRouter()
 
     const categories = computed(() => store.getters.getCategories)
     const visibleDropdown = ref(false)
+
+    function openCategory(category) {
+      router.push(`/category/${category}`)
+    }
 
     function showDropdown() {
       visibleDropdown.value = true
@@ -37,7 +43,7 @@ export default {
       await store.dispatch('loadCategories')
     })
 
-    return { categories, showDropdown, hideDropdown, visibleDropdown }
+    return { categories, showDropdown, hideDropdown, visibleDropdown, openCategory }
   }
 }
 </script>
