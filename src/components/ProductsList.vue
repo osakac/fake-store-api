@@ -19,8 +19,7 @@ export default {
     const store = useStore()
     const router = useRouter()
 
-    async function openProduct(id) {
-      await store.dispatch('loadProduct', id)
+    function openProduct(id) {
       router.push(`/product/${id}`)
     }
 

@@ -10,6 +10,9 @@ export default createStore({
     getProducts(state) {
       return state.products;
     },
+    getProduct(state) {
+      return state.product;
+    },
     getCategories(state) {
       return state.categories;
     },
@@ -23,6 +26,9 @@ export default createStore({
     },
     setCategories(state, categories) {
       state.categories = categories;
+    },
+    clearProduct(state) {
+      state.product = {};
     },
   },
   actions: {

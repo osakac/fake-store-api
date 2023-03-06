@@ -104,6 +104,11 @@ a {
   height: 200px;
 }
 
+.view-card__img {
+  width: 400px;
+  height: 500px;
+}
+
 .view-table__title {
   display: -webkit-box;
   -webkit-line-clamp: 2;
@@ -116,4 +121,16 @@ a {
   display: block;
   text-align: right;
   font-weight: bold;
+}
+
+.view-card__block {
+  display: flex;
+  justify-content: space-between;
+}
+
+.view-card__content {
+  width: 800px;
+}
+.view-card__content h3 {
+  margin-bottom: 30px;
 }/*# sourceMappingURL=style.css.map */
